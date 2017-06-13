@@ -1,5 +1,7 @@
 # css-sieve
 
+[![Build Status](https://travis-ci.org/mapbox/css-sieve.svg?branch=master)](https://travis-ci.org/mapbox/css-sieve)
+
 Sift CSS through HTML.
 
 Parses HTML with [Cheerio](https://github.com/cheeriojs/cheerio) — using its jQuery-like selector queries — to determine which selectors in the CSS correspond to actual elements on the page.

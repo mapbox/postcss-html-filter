@@ -1,0 +1,55 @@
+{
+  "name": "@mapbox/css-sieve",
+  "version": "0.1.0",
+  "description": "Sift CSS through HTML",
+  "main": "index.js",
+  "scripts": {
+    "format": "prettier --single-quote --write '{{lib, test}/**/*.js, index.js}'",
+    "jest": "jest",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mapbox/css-sieve.git"
+  },
+  "keywords": [
+    "filter",
+    "css",
+    "postcss",
+    "cheerio",
+    "optimize",
+    "reduce"
+  ],
+  "author": "Mapbox",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mapbox/css-sieve/issues"
+  },
+  "homepage": "https://github.com/mapbox/css-sieve#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.1",
+    "lodash": "^4.17.4",
+    "postcss": ">=5.0.0",
+    "postcss-discard-empty": "^2.1.0",
+    "postcss-discard-unused": "^2.2.3"
+  },
+  "devDependencies": {
+    "jest": "^20.0.4",
+    "prettier": "^1.4.4"
+  },
+  "jest": {
+    "coverageReporters": [
+      "json",
+      "lcov",
+      "text",
+      "html"
+    ],
+    "resetMocks": true,
+    "roots": [
+      "./test"
+    ]
+  },
+  "engines": {
+    "node": ">=4"
+  }
+}

@@ -1,0 +1,27 @@
+.one { color: pink; } /* keep */
+.fake { color: blue; }
+
+@media (min-width: 80px) {
+  .one { color: orange; } /* keep */
+  .fake { color: purple; }
+}
+
+@media (max-width: 1000px) {
+  .fake { color: pink; }
+}
+
+:first-letter { color: pink; }
+
+body .three { background: black; } /* keep */
+.two > .two-inner { color: yellow; } /* keep */
+input { color: white; } /* keep */
+
+@keyframes not-used {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+[disabled] { color: gray; } /* keep */
+*:not([disabled]) { color: orangutan; } /* keep */
+#two[type="text"] { display: none; } /* keep */
+#two[type="not-text"] { display: block; }

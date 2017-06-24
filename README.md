@@ -26,7 +26,7 @@ postcss()
 
 ### html
 
-The HTML that you will use to filter your CSS.
+`string` - The HTML that you will use to filter your CSS.
 
 ## Is this like [UnCSS](https://github.com/giakki/uncss)?
 

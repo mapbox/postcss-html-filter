@@ -1,4 +1,4 @@
-# postcss-html-filter
+# @mapbox/postcss-html-filter
 
 [![Build Status](https://travis-ci.org/mapbox/postcss-html-filter.svg?branch=master)](https://travis-ci.org/mapbox/postcss-html-filter)
 
@@ -13,7 +13,7 @@ Also, for good measure, runs the CSS through [postcss-discard-unused](https://gi
 
 ```js
 const postcss = require('postcss');
-const postcssHtmlFilter = require('postcss-html-filter');
+const postcssHtmlFilter = require('@mapbox/postcss-html-filter');
 const fs = require('fs');
 
 const myHtml = fs.readFileSync('path/to/some.html', 'utf8');

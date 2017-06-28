@@ -4,7 +4,8 @@
   "description": "Filter CSS through HTML, removing selectors that do not apply to the HTML",
   "main": "index.js",
   "scripts": {
-    "format": "prettier --single-quote --write '{,lib/, test/}**/*.js'",
+    "precommit": "lint-staged",
+    "format": "prettier --single-quote --write '{,lib/**/,test/**/}*.js'",
     "lint": "eslint .",
     "test-jest": "jest",
     "pretest": "npm run lint",
@@ -35,10 +36,12 @@
     "postcss-discard-unused": "^2.2.3"
   },
   "devDependencies": {
-    "postcss": "^6.0.0",
     "eslint": "^4.0.0",
     "eslint-plugin-node": "^5.0.0",
+    "husky": "^0.14.1",
     "jest": "^20.0.4",
+    "lint-staged": "^4.0.0",
+    "postcss": "^6.0.0",
     "prettier": "^1.4.4"
   },
   "peerDependencies": {
@@ -58,5 +61,12 @@
   },
   "engines": {
     "node": ">=4"
+  },
+  "lint-staged": {
+    "{,lib/**/,test/**/}*.js": [
+      "eslint",
+      "prettier --single-quote --write",
+      "git add"
+    ]
   }
 }

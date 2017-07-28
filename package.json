@@ -49,12 +49,10 @@
   },
   "jest": {
     "coverageReporters": [
-      "json",
-      "lcov",
       "text",
       "html"
     ],
-    "resetMocks": true,
+    "clearMocks": true,
     "roots": [
       "./test"
     ]
@@ -63,7 +61,7 @@
     "node": ">=4"
   },
   "lint-staged": {
-    "{,lib/**/,test/**/}*.js": [
+    "**/*.js": [
       "eslint",
       "prettier --single-quote --write",
       "git add"

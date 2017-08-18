@@ -45,7 +45,8 @@ The HTML that you will use to filter your CSS.
 
 - Before checking if a selector applies to the HTML [pseudo-elements](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements) are stripped (e.g. `::before`, `::first-line`).
   If the selector applies *without* them, we can assume that it also applies *with* them, and the selector should be kept.
-  [Pseudo-classes](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes) (e.g. `:first-child`, `:not(a)`, `:nth-child(3)`) are passed to Cheerio, which interprets them correctly (using [css-select](https://github.com/fb55/css-select)).
+  [Pseudo-classes](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes) (e.g. `:first-child`, `:not(a)`, `:nth-child(3)`) are passed to Cheerio when Cheerio can interpret them (using [css-select](https://github.com/fb55/css-select)).
+  If the pseudo-class cannot be interpreted by Cheerio, it is stripped before the selector is checked.
 
 ## Caveats
 

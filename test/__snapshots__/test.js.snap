@@ -43,5 +43,16 @@ input { color: white; } /* keep */
 /* :not that applies */
 *:not([disabled]) { color: orangutan; } /* keep */
 /* :not that does not apply */
+
+/* vendor-prefixed pseudo-class that applies */
+.four::-moz-focus-inner { outline: 0 } /* keep */
+/* vendor-prefixed pseudo-class that does not  */
+
+/* vendor-prefixed pseudo-element that applies */
+input:-ms-input-placeholder { color: red } /* keep */
+/* vendor-prefixed pseudo-element that does not  */
+
+/* :root pseudo-element */
+:root { background: black; } /* keep */
 "
 `;

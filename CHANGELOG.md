@@ -1,6 +1,6 @@
 # Changelog
 
-## Head
+## 0.3.0
 
 - [Breaking fix] Revamp handling of pseudo selectors.
   Pseudo-elements are stripped while checking, but pseudo-classes are passed to Cheerio, which interprets them accurately.

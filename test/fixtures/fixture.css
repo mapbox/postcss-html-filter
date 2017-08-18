@@ -1,27 +1,57 @@
+/* Class that does exist */
 .one { color: pink; } /* keep */
+/* Class that does not exist */
 .fake { color: blue; }
 
-@media (min-width: 80px) {
+/* Media query that will still have child rules */
+@media (min-width: 80px) { /* keep */
   .one { color: orange; } /* keep */
   .fake { color: purple; }
 }
 
+/* Media query that will lose all its child rules */
 @media (max-width: 1000px) {
   .fake { color: pink; }
 }
 
-:first-letter { color: pink; }
+/* Pseudo-class on an element that exists */
+.two-inner:first-letter { color: pink; } /* keep */
+/* Pseudo-class on an element that does not exist */
+.fake:first-letter { color: pink; }
 
+/* Combinators */
 body .three { background: black; } /* keep */
 .two > .two-inner { color: yellow; } /* keep */
+/* Type selector */
 input { color: white; } /* keep */
 
+/* Keyframes that are not used */
 @keyframes not-used {
   0% { opacity: 0; }
   100% { opacity: 1; }
 }
 
+/* Attribute selector that applies */
 [disabled] { color: gray; } /* keep */
-*:not([disabled]) { color: orangutan; } /* keep */
+/* Combination id-attribute that applies */
 #two[type="text"] { display: none; } /* keep */
+/* Combination id-attribute that does not apply */
 #two[type="not-text"] { display: block; }
+
+/* Pseudo-element on an element that exists */
+.list::before { content: "blergh"; } /* keep */
+/* Pseudo-element on an element that does not exist */
+.fake::before { content: "ooo"; }
+/* Same as above but with one colon */
+.list:before { content: "blergh"; } /* keep */
+.fake:before { content: "ooo"; }
+
+/* nth-child that applies */
+.list li:nth-child(2) { opacity: 0.5; } /* keep */
+/* nth-child that does not apply */
+.list li:nth-child(7) { opacity: 0.2; }
+
+/* :not that applies */
+*:not([disabled]) { color: orangutan; } /* keep */
+/* :not that does not apply */
+.list:not(#the-list) { padding: 0; }

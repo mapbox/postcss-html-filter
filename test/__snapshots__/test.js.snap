@@ -1,20 +1,47 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`produces expected output 1`] = `
-".one { color: pink; } /* keep */
+"/* Class that does exist */
+.one { color: pink; } /* keep */
+/* Class that does not exist */
 
-@media (min-width: 80px) {
+/* Media query that will still have child rules */
+@media (min-width: 80px) { /* keep */
   .one { color: orange; } /* keep */
 }
 
-:first-letter { color: pink; }
+/* Media query that will lose all its child rules */
 
+/* Pseudo-class on an element that exists */
+.two-inner:first-letter { color: pink; } /* keep */
+/* Pseudo-class on an element that does not exist */
+
+/* Combinators */
 body .three { background: black; } /* keep */
 .two > .two-inner { color: yellow; } /* keep */
+/* Type selector */
 input { color: white; } /* keep */
 
+/* Keyframes that are not used */
+
+/* Attribute selector that applies */
 [disabled] { color: gray; } /* keep */
-*:not([disabled]) { color: orangutan; } /* keep */
+/* Combination id-attribute that applies */
 #two[type=\\"text\\"] { display: none; } /* keep */
+/* Combination id-attribute that does not apply */
+
+/* Pseudo-element on an element that exists */
+.list::before { content: \\"blergh\\"; } /* keep */
+/* Pseudo-element on an element that does not exist */
+/* Same as above but with one colon */
+.list:before { content: \\"blergh\\"; } /* keep */
+
+/* nth-child that applies */
+.list li:nth-child(2) { opacity: 0.5; } /* keep */
+/* nth-child that does not apply */
+
+/* :not that applies */
+*:not([disabled]) { color: orangutan; } /* keep */
+/* :not that does not apply */
 "
 `;

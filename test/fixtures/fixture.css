@@ -55,3 +55,16 @@ input { color: white; } /* keep */
 *:not([disabled]) { color: orangutan; } /* keep */
 /* :not that does not apply */
 .list:not(#the-list) { padding: 0; }
+
+/* vendor-prefixed pseudo-class that applies */
+.four::-moz-focus-inner { outline: 0 } /* keep */
+/* vendor-prefixed pseudo-class that does not  */
+.fake::-moz-focus-inner { outline: 0 }
+
+/* vendor-prefixed pseudo-element that applies */
+input:-ms-input-placeholder { color: red } /* keep */
+/* vendor-prefixed pseudo-element that does not  */
+input.fake::-ms-input-placeholder { color: red }
+
+/* :root pseudo-element */
+:root { background: black; } /* keep */

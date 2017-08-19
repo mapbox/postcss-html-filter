@@ -1,5 +1,9 @@
 # Changelog
 
+## Head
+
+- [Fix] More improvements to handling of pseudo selectors.
+
 ## 0.3.0
 
 - [Breaking fix] Revamp handling of pseudo selectors.

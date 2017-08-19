@@ -1,6 +1,6 @@
 {
   "name": "@mapbox/postcss-html-filter",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Filter CSS through HTML, removing selectors that do not apply to the HTML",
   "main": "index.js",
   "scripts": {

@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/mapbox/postcss-html-filter.svg?branch=master)](https://travis-ci.org/mapbox/postcss-html-filter)
 
-Filter CSS through HTML, removing selectors that do not apply to the HTML.
+Filter CSS through HTML, removing selectors that do not apply to that HTML.
 
 Parses HTML with [Cheerio](https://github.com/cheeriojs/cheerio) — using its jQuery-like selector queries — to determine which selectors in the CSS correspond to actual elements on the page.
 Removes selectors that have no corresponding elements, rules that have no corresponding selectors, at-rules containing no corresponding rules, etc.

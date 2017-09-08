@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.0
+
+- Release v1, because it's time.
+
 ## 0.3.1
 
 - [Fix] More improvements to handling of pseudo selectors.

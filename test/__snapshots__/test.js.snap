@@ -39,10 +39,12 @@ input { color: white; } /* keep */
 /* nth-child that applies */
 .list li:nth-child(2) { opacity: 0.5; } /* keep */
 /* nth-child that does not apply */
+.list li:nth-child(7) { opacity: 0.2; }
 
 /* :not that applies */
 *:not([disabled]) { color: orangutan; } /* keep */
 /* :not that does not apply */
+.list:not(#the-list) { padding: 0; }
 
 /* vendor-prefixed pseudo-class that applies */
 .four::-moz-focus-inner { outline: 0 } /* keep */

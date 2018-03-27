@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "precommit": "lint-staged",
-    "format": "prettier --single-quote --write '{,lib/**/,test/**/}*.js'",
+    "format": "prettier --write '**/*.js'",
     "lint": "eslint .",
     "test-jest": "jest",
     "pretest": "npm run lint",
@@ -30,22 +30,26 @@
   },
   "homepage": "https://github.com/mapbox/postcss-html-filter#readme",
   "dependencies": {
-    "cheerio": "^1.0.0-rc.1",
-    "lodash": "^4.17.4",
+    "cheerio": "^1.0.0-rc.2",
+    "lodash": "^4.17.5",
     "postcss-discard-empty": "^2.1.0",
-    "postcss-discard-unused": "^2.2.3"
+    "postcss-discard-unused": "^2.2.3",
+    "postcss-selector-parser": "^3.1.1"
   },
   "devDependencies": {
-    "eslint": "^4.0.0",
-    "eslint-plugin-node": "^5.0.0",
-    "husky": "^0.14.1",
-    "jest": "^20.0.4",
-    "lint-staged": "^4.0.0",
-    "postcss": "^6.0.0",
-    "prettier": "^1.4.4"
+    "eslint": "^4.19.1",
+    "eslint-plugin-node": "^6.0.1",
+    "husky": "^0.14.3",
+    "jest": "^22.4.3",
+    "lint-staged": "^7.0.0",
+    "postcss": "^6.0.21",
+    "prettier": "^1.11.1"
   },
   "peerDependencies": {
     "postcss": ">=5.0.0"
+  },
+  "prettier": {
+    "singleQuote": true
   },
   "jest": {
     "coverageReporters": [
@@ -63,7 +67,7 @@
   "lint-staged": {
     "**/*.js": [
       "eslint",
-      "prettier --single-quote --write",
+      "prettier --write",
       "git add"
     ]
   }

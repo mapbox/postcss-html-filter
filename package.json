@@ -4,7 +4,6 @@
   "description": "Filter CSS through HTML, removing selectors that do not apply to the HTML",
   "main": "index.js",
   "scripts": {
-    "precommit": "lint-staged",
     "format": "prettier --write '**/*.js'",
     "lint": "eslint .",
     "test-jest": "jest",
@@ -30,26 +29,31 @@
   },
   "homepage": "https://github.com/mapbox/postcss-html-filter#readme",
   "dependencies": {
-    "cheerio": "^1.0.0-rc.2",
-    "lodash": "^4.17.5",
-    "postcss-discard-empty": "^2.1.0",
-    "postcss-discard-unused": "^2.2.3",
-    "postcss-selector-parser": "^3.1.1"
+    "cheerio": "^1.0.0-rc.3",
+    "lodash": "^4.17.15",
+    "postcss-discard-empty": "^4.0.1",
+    "postcss-discard-unused": "^4.0.1",
+    "postcss-selector-parser": "^6.0.2"
   },
   "devDependencies": {
-    "eslint": "^4.19.1",
-    "eslint-plugin-node": "^6.0.1",
-    "husky": "^0.14.3",
-    "jest": "^22.4.3",
-    "lint-staged": "^7.0.0",
-    "postcss": "^6.0.21",
-    "prettier": "^1.11.1"
+    "eslint": "^7.2.0",
+    "eslint-plugin-node": "^11.1.0",
+    "husky": "^4.2.5",
+    "jest": "^26.0.1",
+    "lint-staged": "^10.2.10",
+    "postcss": "^7.0.32",
+    "prettier": "^2.0.5"
   },
   "peerDependencies": {
     "postcss": ">=5.0.0"
   },
   "prettier": {
     "singleQuote": true
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "jest": {
     "coverageReporters": [
@@ -62,13 +66,12 @@
     ]
   },
   "engines": {
-    "node": ">=4"
+    "node": ">=10"
   },
   "lint-staged": {
     "**/*.js": [
       "eslint",
-      "prettier --write",
-      "git add"
+      "prettier --write"
     ]
   }
 }

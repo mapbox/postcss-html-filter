@@ -17,12 +17,12 @@ test('produces expected output', () => {
   return postcss()
     .use(plugin({ html }))
     .process(css, { from: 'a', to: 'b' })
-    .then(result => {
+    .then((result) => {
       expect(result.css).toMatchSnapshot();
 
       // In the fixture, every non-comment line that should be kept must be
       // suffixed with a /* keep */ comment.
-      result.css.split('\n').forEach(line => {
+      result.css.split('\n').forEach((line) => {
         if (!line) return;
         if (/\s*}\s*/.test(line)) return;
         if (line.slice(0, 2) === '/*') return;

@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.0
+
+- Update dependencies and require Node version >=10.
+
 ## 1.0.1
 
 - Strip all pseudo-elements and -classes from selectors before checking them.

@@ -7,11 +7,11 @@ const postcssDiscardEmpty = require('postcss-discard-empty');
 const postcssDiscardUnused = require('postcss-discard-unused');
 const selectorParser = require('postcss-selector-parser');
 
-const plugin = postcss.plugin('postcss-html-filter', options => {
+const plugin = postcss.plugin('postcss-html-filter', (options) => {
   const query = cheerio.load(options.html);
 
-  const transformSelector = selector => {
-    selector.walkPseudos(pseudo => {
+  const transformSelector = (selector) => {
+    selector.walkPseudos((pseudo) => {
       // Keep all :root selectors.
       if (pseudo.value === 'root') {
         return;
@@ -20,13 +20,13 @@ const plugin = postcss.plugin('postcss-html-filter', options => {
     });
   };
 
-  const transformRule = rule => {
+  const transformRule = (rule) => {
     let cleanedSelectors = [];
 
     // Keep all keyframe selectors.
     if (/keyframes/.test(_.get(rule, 'parent.name', ''))) return;
 
-    rule.selectors.forEach(selector => {
+    rule.selectors.forEach((selector) => {
       const pseudolessSelector = selectorParser(transformSelector).processSync(
         selector
       );

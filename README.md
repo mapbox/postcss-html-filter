@@ -1,6 +1,6 @@
 # @mapbox/postcss-html-filter
 
-[![Build Status](https://travis-ci.org/mapbox/postcss-html-filter.svg?branch=main)](https://travis-ci.org/mapbox/postcss-html-filter)
+[![Build Status](https://travis-ci.com/mapbox/postcss-html-filter.svg?branch=main)](https://travis-ci.com/mapbox/postcss-html-filter)
 
 Filter CSS through HTML, removing selectors that do not apply to that HTML.
 

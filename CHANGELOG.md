@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.0.0
+
+- update dependencies, eslint rules, and travis config.
+
 ## 2.0.0
 
 - Update dependencies and require Node version >=10.

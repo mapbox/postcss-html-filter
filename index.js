@@ -7,7 +7,7 @@ const postcssDiscardEmpty = require('postcss-discard-empty');
 const postcssDiscardUnused = require('postcss-discard-unused');
 const selectorParser = require('postcss-selector-parser');
 
-const plugin = postcss.plugin('postcss-html-filter', (options) => {
+const htmlFilterPlugin = (options) => {
   const query = cheerio.load(options.html);
 
   const transformSelector = (selector) => {
@@ -56,17 +56,23 @@ const plugin = postcss.plugin('postcss-html-filter', (options) => {
     }
   };
 
-  return (root, result) => {
-    root.walkRules(transformRule);
+  return {
+    postcssPlugin: 'postcss-html-filter',
+    Once: (root) => {
+      root.walkRules(transformRule);
+      return root;
+    }
+  }
+};
 
-    // Discard any at-rules we've emptied of rules.
-    postcssDiscardEmpty()(root, result);
+const combinedPlugin = (options) => {
+  return postcss([
+    htmlFilterPlugin(options),
+    postcssDiscardEmpty, // Discard any at-rules we've emptied of rules.
+    postcssDiscardUnused // Discard unused at-rules, e.g. counter-styles, keyframes, font-faces.
+  ])
+}
 
-    // Discard unused at-rules, e.g. counter-styles, keyframes, font-faces.
-    postcssDiscardUnused()(root, result);
+combinedPlugin.postcss = true
 
-    return root;
-  };
-});
-
-module.exports = plugin;
+module.exports = combinedPlugin;

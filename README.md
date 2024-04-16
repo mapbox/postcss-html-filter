@@ -1,3 +1,6 @@
+## Note: This repository is no longer active. 
+As of April 2024 this archive is no longer used as core infrastructure for Mapbox docs has moved to a [docusaurus based](https://github.com/mapbox/docusaurus-packages) website builder.
+
 # @mapbox/postcss-html-filter
 
 [![Build Status](https://travis-ci.com/mapbox/postcss-html-filter.svg?branch=main)](https://travis-ci.com/mapbox/postcss-html-filter)
